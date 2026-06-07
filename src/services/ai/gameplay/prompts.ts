@@ -24,6 +24,7 @@ interface PromptSegment {
   content: string;
   priority: number;
   order: number;
+  moduleIndex?: number;
   source?: string;
 }
 
@@ -558,7 +559,7 @@ ${playerProfileDetails}
     }
   };
 
-  activeModules.forEach((mod) => {
+  activeModules.forEach((mod, index) => {
     if (!mod.enabled || (!mod.content && !mod.marker)) return;
 
     let segmentContent = mod.content || "";
@@ -630,6 +631,7 @@ ${playerProfileDetails}
     const segment = {
       priority: priority,
       order: mod.injection_order || 0,
+      moduleIndex: index,
       content: segmentContent,
       source: `Module:${mod.identifier}`,
     };
@@ -1348,7 +1350,10 @@ TIME & ACTION DIRECTIVE:
       if (a.priority !== b.priority) {
         return a.priority - b.priority; // Lower priority comes first
       }
-      return (a.order || 0) - (b.order || 0); // Lower order comes first
+      if (a.order !== b.order) {
+        return (a.order || 0) - (b.order || 0); // Lower order comes first
+      }
+      return (a.moduleIndex ?? 0) - (b.moduleIndex ?? 0); // Preserve original index order when order/priority are identical
     });
 
     // Resolve variables

@@ -156,6 +156,42 @@ function extractEnabledMapFromPromptOrder(promptOrder: any): Record<string, bool
   return enabledMap;
 }
 
+export function reorderModulesByPromptOrder(modules: any[], promptOrder: any): any[] {
+  if (!Array.isArray(modules)) return [];
+  if (!Array.isArray(promptOrder)) return modules;
+
+  let orderList: any[] = [];
+  for (const group of promptOrder) {
+    if (group && Array.isArray(group.order) && group.order.length > 0) {
+      orderList = group.order;
+      break;
+    }
+  }
+
+  if (orderList.length === 0) return modules;
+
+  const orderIndexMap: Record<string, number> = {};
+  orderList.forEach((item, index) => {
+    if (item && item.identifier !== undefined) {
+      orderIndexMap[item.identifier] = index;
+    }
+  });
+
+  const sorted = [...modules].sort((a, b) => {
+    const aIndex = orderIndexMap[a.identifier];
+    const bIndex = orderIndexMap[b.identifier];
+
+    if (aIndex !== undefined && bIndex !== undefined) {
+      return aIndex - bIndex;
+    }
+    if (aIndex !== undefined) return -1;
+    if (bIndex !== undefined) return 1;
+    return 0;
+  });
+
+  return sorted;
+}
+
 export function parseBuiltinPreset(id: string, name: string, data: any): SavedPreset {
   let config: TawaPresetConfig = { modules: [] };
   if (data.prompts && Array.isArray(data.prompts)) {
@@ -180,6 +216,8 @@ export function parseBuiltinPreset(id: string, name: string, data: any): SavedPr
         enabled: isEnabled
       };
     });
+    // REORDER modules based on prompt_order!
+    config.modules = reorderModulesByPromptOrder(config.modules, data.prompt_order);
   }
 
   normalizePresetConfig(config);
@@ -598,6 +636,11 @@ export default function TawaPresetManager({
               enabled: isEnabled
             };
           });
+          // REORDER modules based on prompt_order!
+          newConfig.modules = reorderModulesByPromptOrder(
+            newConfig.modules,
+            importedJson.prompt_order || (importedJson.config && importedJson.config.prompt_order)
+          );
         }
 
         const stScripts = [
