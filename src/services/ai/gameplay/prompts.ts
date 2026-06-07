@@ -705,25 +705,30 @@ Bạn PHẢI tôn trọng tuyệt đối các quy luật thế giới, hệ th�
 
 1. **Khấu trừ Tài Nguyên & Ràng Buộc Tiền Đề (Resource & Requirement Checks)**:
    - Nếu một kỹ năng, ma pháp, võ công, hoặc chiêu thức yêu cầu một loại tài nguyên, trạng thái hoặc tiền đề cụ thể (Ví dụ: Linh khí, Ma lực, Mana, Đan dược cụ thể, Vũ khí tương thích, Khoảng cách giới hạn...) để thi triển: Bạn PHẢI đối chiếu nghiêm khắc với trạng thái thực tế của nhân vật trong LSR (ví dụ: linh khí = 0, cạn kiệt ma lực, vũ khí bị gãy, khí độc bao phủ).
-   - Tuyệt đối nghiêm cấm việc nhân vật \"cạn linh khí/hết mana\" nhưng vẫn thản nhiên thi triển kỹ năng thành công bừa bãi hoặc có cheat ảo vượt qua quy luật mà không phải trả giá cực đắt.
+   - Tuyệt đối nghiêm cấm việc nhân vật "cạn linh khí/hết mana" nhưng vẫn thản nhiên thi triển kỹ năng thành công bừa bãi hoặc có cheat ảo vượt qua quy luật mà không phải trả giá cực đắt.
 
 2. **Kịch Tính Hóa Sự Cản Trở / Thất Bại (Enforce Logical Obstacles/Failure)**:
    - Thay vì phớt lờ giới hạn đề bài để viết suôn sẻ như AI thông thường, bạn PHẢI bám sát các giới hạn này và biến sự thiếu hụt, suy kiệt thành nút thắt nội tâm hoặc hành động kịch tính:
-     * Ví dụ (Cạn linh khí): \"Arthur nghiến chặt răng gồng sức vận chuyển 『Xích Diễm Kiếm』, nhưng đan điền trống rỗng khô khốc lập tức dấy lên một cơn đau xé rách kinh mạch {RẮC!}. Luồng lửa ma pháp vừa chớm bùng lên đầu kiếm đã lịm tắt, để lại làn khói xám bốc lên cùng sự bàng hoàng lộ rõ trên gương mặt...\";
-     * Ví dụ (Vùng cấm ma pháp): \"Các cổ tự ma pháp lập tức vỡ nát dưới áp lực cấm chế của vùng đất tuyệt lực. Chỉ một làn gió thổi qua cũng đủ cuốn phai tàn tich của ma thuật vô dụng dồn ép Arthur rơi vào tình thế bế tắc kinh hoàng...\".
+     * Ví dụ (Cạn linh khí): "Arthur nghiến chặt răng gồng sức vận chuyển 『Xích Diễm Kiếm』, nhưng đan điền trống rỗng khô khốc lập tức dấy lên một cơn đau xé rách kinh mạch {RẮC!}. Luồng lửa ma pháp vừa chớm bùng lên đầu kiếm đã lịm tắt, để lại làn khói xám bốc lên cùng sự bàng hoàng lộ rõ trên gương mặt...";
+     * Ví dụ (Vùng cấm ma pháp): "Các cổ tự ma pháp lập tức vỡ nát dưới áp lực cấm chế của vùng đất tuyệt lực. Chỉ một làn gió thổi qua cũng đủ cuốn phai tàn tich của ma thuật vô dụng dồn ép Arthur rơi vào tình thế bế tắc kinh hoàng...".
    - Luôn cho phép các nhân vật gánh chịu hậu quả sòng phẳng, thất bại logic trước các giới hạn của thế giới nguyên tác.
 
 3. **Cơ Chế Phản Phệ & Độc Hại của Thế Giới Thực Tại (Backlash & Power Suppression Laws)**:
    - Cố gắng gượng ép vượt cấp, cố xuất chiêu khi cạn kiệt tài nguyên, hoặc thách thức luật cấm hệ thống PHẢI dẫn đến hậu quả nghiêm trọng: phản phệ đứt gãy kinh mạch, ngất xỉu, hỏng trang bị, sụt giảm chí mệnh các chỉ số lực chiến hoặc rơi vào trạng thái nguy cơ tử vong.
 
-4. **KỶ LUẬT SUY NGHĨ TRONG <thinking> (SILENT LOGIC AUDIT)**:
+4. **Nhất Quán Trạng Thái Vật Lý & Thời Gian Của Vật Phẩm Cận Cảnh (Chronological State Continuity of Objects - CRITICAL)**:
+   - Tuyệt đối không để xảy ra hiện tượng "mất trí nhớ vật lý" hay "nhất thời đãng trí" ngay giữa các lượt kế cận. Nếu ở cuối lượt trước, một vật phẩm hoặc hành động vừa được biến đổi trạng thái (Ví dụ: mua bánh mì mới ra khỏi lò nóng hổi, đổ ly trà nóng hôi hổi, cởi phục trang đặt lên giường, buộc chân tay kẻ địch bằng dây thừng...) thì qua lượt sau bạn BẮT BUỘC phải thừa kế trạng thái vật lý chuẩn xác.
+   - Tuyệt đối nghiêm cấm hành vi bám theo các mô-típ sáo rỗng sành điệu phổ biến (clichés) của AI (ví dụ: bánh mì đi đường tự động coi là 'cứng như đá' bất luận vừa mới ra lò nóng hổi chỉ vài giây trước). Trạng thái nhiệt độ, độ ẩm, độ tươi và tính nguyên bản của vật chất phải được bảo toàn chặt chẽ và chỉ suy thoái tuyến tính theo thời gian game thực tế.
+
+5. **KỶ LUẬT SUY NGHĨ TRONG <thinking> (SILENT LOGIC AUDIT)**:
    - Ở đầu block <thinking> của turn chat này, bạn PHẢI thực hiện rà soát riêng theo cấu trúc:
      \`\`\`
      [KNOWLEDGE LOGIC AUDIT]
      - Giới hạn từ Tri thức gốc / LSR / Lorebook đang áp dụng: ...
+     - Trạng thái vật lý & thời gian vật phẩm kế thừa từ diễn biến lượt ngay trước: ...
      - Ý định hành động của người chơi / NPC: ...
      - Sự tương thích logic (Đạt yêu cầu tài nguyên/bối cảnh không?): ...
-     - Kế hoạch biến chuyển (Nếu thiếu hụt/bị cấm, sẽ viết diễn biến Thất bại/Kháng cự bế tắc/Hậu quả như thế nào?): ...
+     - Kế hoạch biến chuyển (Nếu thiếu hụt/bị cấm, hoặc để duy trì nhất quán trạng thái vật chất, sẽ viết diễn biến Thất bại/Kháng cự bế tắc/Hậu quả hay Đảm bảo vật lý trực quan như thế nào?): ...
      \`\`\`
 </KNOWLEDGE_LOGIC_INTEGRITY_LAWS>`,
     source: "KnowledgeLogicIntegrityLaws",
@@ -1096,6 +1101,12 @@ DIRECTIVE:
 (BẢNG TRẠNG THÁI THẾ GIỚI HIỆN TẠI - LSR DATA)
 Dữ liệu bên dưới là trạng thái hiện tại của thế giới để giúp bạn nắm bắt bối cảnh, túi đồ, chỉ số lực chiến và quan hệ nhân vật một cách nhất quán nhất.
 LƯU Ý QUAN TRỌNG: Bạn KHÔNG CẦN PHẢI in các thẻ <tableEdit> hay <table_stored> thủ công nữa. Hệ thống quản trị của chúng tôi sẽ phân tích truyện bạn viết để tự động cập nhật cơ sở dữ liệu LSR thông qua Function Calling (Structured Outputs) chạy ngầm!
+
+🚨 NGUYÊN TẮC NHẤT QUÁN THỜI GIAN & VẬT LÝ LSR (CHRONO-PHYSICAL CONTINUITY):
+- Hiện tại game đang ở Turn thứ: ${turnCount}
+- Bạn PHẢI đối chiếu Turn hiện tại với thông tin "Nhận ở Turn [X]" hoặc "Mua ở Turn [X]" ghi nhận trong bảng Túi đồ (#6) hoặc Hiệu ứng và các bảng liên quan khác để mô tả trạng thái vật lý chân thực của vật chất (độ tươi, nhiệt độ, độ giòn/dai, độ bền) theo đúng luật hao mòn cơ học/tự nhiên (Linear Entropy).
+- Ví dụ: Nếu Túi đồ có "Bánh mì" ghi "Trạng thái: ... (Nhận ở Turn ${turnCount})" (tức vừa mới mua ở turn này), bạn TUYỆT ĐỐI KHÔNG ĐƯỢC viết nó là "cứng như đá" hay "nguội ngắt khô khốc". Nó bắt buộc phải nóng hổi, giòn rụm và thơm phức mới ra lò! Chỉ khi độ chênh lệch lượt lớn (Ví dụ: Turn hiện tại đã là ${turnCount + 5} trở lên so với Turn nhận), vật phẩm dễ hư hỏng mới nguội dần, khô mòn hoặc hóa cứng theo một tốc độ tuyến tính tương ứng.
+- Tương tự với trà nóng, nước sôi, vết thương rách da, chất độc, dây trói - tất cả phải vận hành có gia tốc và suy hao hợp lý chứ không được biến dị tức thời mất kiểm soát.
 
 ${tableData}
 </CURRENT_WORLD_STATE_LSR>`,

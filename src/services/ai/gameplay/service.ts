@@ -1103,6 +1103,7 @@ export const gameplayAiService = {
     narrativeText: string,
     currentLsrData: Record<string, Record<string, string>[]>,
     settings: AppSettings,
+    turnCount?: number,
   ): Promise<Record<string, Record<string, string>[]>> {
     const aiClient = getAiClient(settings);
     if (!aiClient) return currentLsrData;
@@ -1136,6 +1137,20 @@ ${tableDefinitionsStr}
    - Heavily penalize and REJECT adding any supernatural items, magic artifacts, or Xianxia/Cultivation terminology (e.g., "Linh căn", "Đan dược tu chân", "Pháp bảo", "Phi kiếm", "Tẩy tủy", supernatural stats, magical tokens) if the world settings or story turn indicates a realistic, mundane, noir, academy, or sci-fi theme.
    - Generated items or status values must fit perfectly within the established setting IP and genre.
 
+3. **CHRONOLOGICAL REALITY-GROUNDING & PHYSICAL ENTROPY COMPLIANCE**:
+   - Current Turn Count: ${turnCount !== undefined ? turnCount : "Unknown"}
+   - Avoid instant preservation or sudden ungrounded decay.
+   - Whenever an item is added or updated (especially food, drinks, potions, heated/frozen goods, or delicate equipment in Table #6 "Túi đồ"), you MUST record its acquisition metadata or fresh state details inside the description/status column (Column 2).
+   - Format: "Trạng thái: [Tính chất vật lý] (Nhận ở Turn ${turnCount !== undefined ? turnCount : "X"}) | Tác dụng"
+     - Example: "Trạng thái: Nóng hổi mới ra lò (Nhận ở Turn ${turnCount !== undefined ? turnCount : "X"}) | Ăn chống đói hồi 15 thể lực"
+     - Example: "Trạng thái: Trà nóng sủi bọt (Nhận ở Turn ${turnCount !== undefined ? turnCount : "X"}) | Giải độc tố nhẹ"
+   - For existing items in the previous state: Apply LINEAR ENTROPY decay relative to how many turns have passed (Turn count of current turn minus the recorded acquisition Turn).
+     - Delta = 0 or 1 turn: Perishable remains fresh, food remains warm/hot as originally purchased. Do NOT let the AI skip logic and call a fresh bread "hard as stone" or "cold as ice" immediately on Turn +1!
+     - Delta = 2 to 4 turns: Warm items become room temperature/soft.
+     - Delta = 5+ turns: Prepared food becomes cold/dry/stale.
+     - Delta = 10+ turns: Prepared food might become stiff or spoiled.
+   - Constantly regulate temperatures, decay states, gashes, charges, and durability states of equipped items, debuffs (Table #12), and active items to enforce pristine physical laws.
+
 Rules for updates:
 - action: "add" if a record does not exist in the table.
 - action: "update" if updating an existing record (matching on rowKey = column index 0).
@@ -1145,7 +1160,7 @@ Rules for updates:
 
 Example for Table #6 "Túi đồ (Inventory)" with columns ["Tên vật phẩm", "Số lượng", "Trạng thái/Tác dụng"]:
 - If user gains a Healing Potion:
-  { "tableId": "6", "action": "add", "rowKey": "Thuốc hồi phục", "columnValues": ["1", "Hồi phục 50 HP"] }
+  { "tableId": "6", "action": "add", "rowKey": "Thuốc hồi phục", "columnValues": ["1", "Trạng thái: Hoàn hảo (Nhận ở Turn ${turnCount !== undefined ? turnCount : "X"}) | Hồi phục 50 HP"] }
 - If user drinks it:
   { "tableId": "6", "action": "delete", "rowKey": "Thuốc hồi phục", "columnValues": [] }
 

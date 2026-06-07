@@ -290,6 +290,7 @@ export function useAIGeneration({
             responseText,
             nextLsrData,
             settings,
+            historyRef.current?.length || 0,
           );
           nextLsrData = auditedLsr;
         } catch (auditErr) {
